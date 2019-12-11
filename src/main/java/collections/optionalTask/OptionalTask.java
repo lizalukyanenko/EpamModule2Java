@@ -16,7 +16,7 @@ public class OptionalTask {
         try {
             digit = scanner.nextInt();
         } catch (InputMismatchException ex) {
-            System.out.println("Ошибка ввода.");
+            System.err.println("Ошибка ввода.");
         }
         reverseOrder(digit);
         System.out.println();

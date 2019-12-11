@@ -1,5 +1,6 @@
 package fundamentals;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class MainTask {
@@ -80,8 +81,8 @@ public class MainTask {
         String[] months = {"январь", "февраль", "март", "апрель", "май", "июнь", "июль", "август", "сентябрь", "октябрь", "ноябрь", "декабрь"};
         try {
             System.out.println("Ваш месяц называется " + months[numberOfMonth - 1]);
-        } catch (Exception e) {
-            System.out.println("Такого месяца не существует");
+        } catch (ArrayIndexOutOfBoundsException | InputMismatchException e) {
+            System.err.println("Такого месяца не существует");
         }
     }
 }
