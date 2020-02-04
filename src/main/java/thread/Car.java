@@ -9,11 +9,10 @@ public class Car {
 
     public int getParkingTime() {
         return new Random().nextInt(1000);
-//                (int)(Math.random()*10000);
     }
 
     public int getWaitTime() {
-        return (int)(Math.random()*5000);
+        return new Random().nextInt(5000);
     }
 
     public int getNumber() {
