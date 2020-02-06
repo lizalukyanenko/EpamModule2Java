@@ -11,7 +11,7 @@ public class OptionalTask {
         Scanner scanner = new Scanner(System.in);
 
         //Task 2.   Ввести число, занести его цифры в стек. Вывести число, у которого цифры идут в обратном порядке.
-        System.out.println("Введите число");
+        System.out.println("Введите число для вывода в обратном порядке");
         int digit = 0;
         try {
             digit = scanner.nextInt();

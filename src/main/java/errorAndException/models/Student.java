@@ -3,13 +3,18 @@ package errorAndException.models;
 import javax.persistence.*;
 
 @Entity
+@Table(name = "student")
 public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column (name = "student_id")
     Integer id;
+    @Column (name = "student_name")
     String name;
+    @Column (name = "student_surname")
     String surname;
     @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "student_group_id")
     private Group group;
 
     public Student() {

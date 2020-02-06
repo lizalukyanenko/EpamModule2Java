@@ -2,27 +2,33 @@ package errorAndException.models;
 
 import javax.persistence.*;
 import java.util.ArrayList;
+import java.util.List;
 
 @Entity
+@Table (name = "group")
 public class Group {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "group_id")
     Integer id;
+    @Column(name = "group_name")
     String nameOfGroup;
-//    ArrayList<Subject> subjects;
+
     @OneToMany(mappedBy = "group", cascade = CascadeType.ALL, orphanRemoval = true)
-    ArrayList<Student> students;
+    List<Student> students;
 
     public Group() {
     }
 
     public Group(String nameOfGroup) {
         this.nameOfGroup = nameOfGroup;
+        students = new ArrayList<>();
     }
 
     public Group(Integer id, String nameOfGroup) {
         this.id = id;
         this.nameOfGroup = nameOfGroup;
+        students = new ArrayList<>();
     }
 
     public void addStudent(Student student) {
@@ -42,7 +48,7 @@ public class Group {
         return nameOfGroup;
     }
 
-    public ArrayList<Student> getStudents() {
+    public List<Student> getStudents() {
         return students;
     }
 
@@ -50,7 +56,7 @@ public class Group {
         this.nameOfGroup = nameOfGroup;
     }
 
-    public void setStudents(ArrayList<Student> students) {
+    public void setStudents(List<Student> students) {
         this.students = students;
     }
 
